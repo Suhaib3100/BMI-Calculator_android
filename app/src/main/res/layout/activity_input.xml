@@ -7,29 +7,32 @@
     android:background="@drawable/background_gradient"
     tools:context=".InputActivity">
 
-    <!-- App Bar -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/white"
-        android:elevation="4dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="@string/input_screen_title"
-        app:titleTextColor="@color/text_primary"
-        app:titleTextAppearance="@style/TextAppearance.BMICalculator.Title" />
+         <!-- App Bar -->
+     <androidx.appcompat.widget.Toolbar
+         android:id="@+id/toolbar"
+         android:layout_width="match_parent"
+         android:layout_height="?attr/actionBarSize"
+         android:background="@color/white"
+         android:elevation="6dp"
+         app:layout_constraintTop_toTopOf="parent"
+         app:title="@string/input_screen_title"
+         app:titleTextColor="@color/text_primary"
+         app:titleTextAppearance="@style/TextAppearance.BMICalculator.Title"
+         app:menu="@menu/toolbar_menu" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
-        android:padding="16dp"
+        android:padding="20dp"
+        android:clipToPadding="false"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                 <androidx.constraintlayout.widget.ConstraintLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:paddingHorizontal="4dp">
 
             <!-- Gender Selection -->
             <TextView
@@ -53,21 +56,21 @@
                 android:layout_marginTop="12dp"
                 app:layout_constraintTop_toBottomOf="@id/tvGenderLabel">
 
-                <!-- Male Card -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardMale"
-                    android:layout_width="0dp"
-                    android:layout_height="140dp"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="12dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="6dp"
-                    app:cardBackgroundColor="@color/card_background"
-                    app:strokeWidth="0dp"
-                    app:rippleColor="@color/primary_blue_light">
+                                 <!-- Male Card -->
+                 <com.google.android.material.card.MaterialCardView
+                     android:id="@+id/cardMale"
+                     android:layout_width="0dp"
+                     android:layout_height="140dp"
+                     android:layout_weight="1"
+                     android:layout_marginEnd="8dp"
+                     android:clickable="true"
+                     android:focusable="true"
+                     android:foreground="?attr/selectableItemBackground"
+                     app:cardCornerRadius="24dp"
+                     app:cardElevation="8dp"
+                     app:cardBackgroundColor="@color/card_background"
+                     app:strokeWidth="0dp"
+                     app:rippleColor="@color/primary_blue_light">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -93,21 +96,21 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Female Card -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardFemale"
-                    android:layout_width="0dp"
-                    android:layout_height="140dp"
-                    android:layout_weight="1"
-                    android:layout_marginStart="12dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="6dp"
-                    app:cardBackgroundColor="@color/card_background"
-                    app:strokeWidth="0dp"
-                    app:rippleColor="@color/female_color">
+                                 <!-- Female Card -->
+                 <com.google.android.material.card.MaterialCardView
+                     android:id="@+id/cardFemale"
+                     android:layout_width="0dp"
+                     android:layout_height="140dp"
+                     android:layout_weight="1"
+                     android:layout_marginStart="8dp"
+                     android:clickable="true"
+                     android:focusable="true"
+                     android:foreground="?attr/selectableItemBackground"
+                     app:cardCornerRadius="24dp"
+                     app:cardElevation="8dp"
+                     app:cardBackgroundColor="@color/card_background"
+                     app:strokeWidth="0dp"
+                     app:rippleColor="@color/female_color">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -153,8 +156,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="6dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="8dp"
                 app:cardBackgroundColor="@color/card_background"
                 app:layout_constraintTop_toBottomOf="@id/tvHeightLabel">
 
@@ -163,7 +166,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center"
-                    android:padding="32dp">
+                    android:padding="40dp">
 
                     <NumberPicker
                         android:id="@+id/npMeters"
@@ -171,13 +174,14 @@
                         android:layout_height="wrap_content"
                         android:theme="@style/NumberPickerStyle" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/meter_unit"
-                        android:textSize="18sp"
-                        android:textColor="@color/text_primary"
-                        android:layout_marginHorizontal="16dp" />
+                                         <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="@string/meter_unit"
+                         android:textSize="20sp"
+                         android:textColor="@color/text_primary"
+                         android:textStyle="bold"
+                         android:layout_marginHorizontal="20dp" />
 
                     <NumberPicker
                         android:id="@+id/npCentimeters"
@@ -185,13 +189,14 @@
                         android:layout_height="wrap_content"
                         android:theme="@style/NumberPickerStyle" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/centimeter_unit"
-                        android:textSize="18sp"
-                        android:textColor="@color/text_primary"
-                        android:layout_marginStart="16dp" />
+                                         <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="@string/centimeter_unit"
+                         android:textSize="20sp"
+                         android:textColor="@color/text_primary"
+                         android:textStyle="bold"
+                         android:layout_marginStart="20dp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -204,16 +209,16 @@
                 android:layout_marginTop="32dp"
                 app:layout_constraintTop_toBottomOf="@id/cardHeight">
 
-                <!-- Weight Card -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardWeight"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="12dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="6dp"
-                    app:cardBackgroundColor="@color/card_background">
+                                 <!-- Weight Card -->
+                 <com.google.android.material.card.MaterialCardView
+                     android:id="@+id/cardWeight"
+                     android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="1"
+                     android:layout_marginEnd="8dp"
+                     app:cardCornerRadius="24dp"
+                     app:cardElevation="8dp"
+                     app:cardBackgroundColor="@color/card_background">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -252,16 +257,16 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Age Card -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardAge"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="12dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="6dp"
-                    app:cardBackgroundColor="@color/card_background">
+                                 <!-- Age Card -->
+                 <com.google.android.material.card.MaterialCardView
+                     android:id="@+id/cardAge"
+                     android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="1"
+                     android:layout_marginStart="8dp"
+                     app:cardCornerRadius="24dp"
+                     app:cardElevation="8dp"
+                     app:cardBackgroundColor="@color/card_background">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -293,22 +298,22 @@
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
-            <!-- Calculate Button -->
-            <Button
-                android:id="@+id/btnCalculate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/calculate_button"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:background="@drawable/button_background_enhanced"
-                android:padding="20dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginBottom="24dp"
-                app:layout_constraintTop_toBottomOf="@id/weightAgeContainer"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                         <!-- Calculate Button -->
+             <Button
+                 android:id="@+id/btnCalculate"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="@string/calculate_button"
+                 android:textSize="20sp"
+                 android:textStyle="bold"
+                 android:textColor="@color/white"
+                 android:background="@drawable/button_background_enhanced"
+                 android:padding="20dp"
+                 android:layout_marginTop="40dp"
+                 android:layout_marginHorizontal="8dp"
+                 android:layout_marginBottom="24dp"
+                 app:layout_constraintTop_toBottomOf="@id/weightAgeContainer"
+                 app:layout_constraintBottom_toBottomOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

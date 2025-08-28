@@ -3,6 +3,8 @@ package com.king.bmicalculatorfinal;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -186,6 +188,22 @@ public class InputActivity extends AppCompatActivity {
         intent.putExtra("age", age);
         intent.putExtra("gender", selectedGender);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_more) {
+            // Handle more options menu
+            Toast.makeText(this, "More options", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

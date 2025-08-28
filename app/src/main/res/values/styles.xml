@@ -79,8 +79,10 @@
     <style name="NumberPickerStyle" parent="Widget.AppCompat.Spinner">
         <item name="android:textColorPrimary">@color/primary_blue</item>
         <item name="android:textColorSecondary">@color/text_secondary</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">24sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:colorControlNormal">@color/primary_blue_light</item>
+        <item name="android:minHeight">80dp</item>
+        <item name="android:minWidth">80dp</item>
     </style>
 </resources>

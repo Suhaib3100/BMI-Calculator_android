@@ -4,7 +4,7 @@
         android:startColor="@color/primary_blue"
         android:endColor="@color/primary_blue_dark"
         android:angle="45" />
-    <corners android:radius="16dp" />
+    <corners android:radius="24dp" />
     <stroke
         android:width="0dp"
         android:color="@color/primary_blue" />
