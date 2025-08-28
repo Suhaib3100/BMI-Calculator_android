@@ -19,13 +19,13 @@ public class InputActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private MaterialCardView cardMale, cardFemale;
-    private NumberPicker npMeters, npCentimeters;
+    private NumberPicker npFeet, npInches;
     private EditText etWeight, etAge;
     private Button btnCalculate;
     
     private String selectedGender = "Male"; // Default selection
-    private int heightMeters = 1;
-    private int heightCentimeters = 61;
+    private int heightFeet = 6;
+    private int heightInches = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +44,8 @@ public class InputActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         cardMale = findViewById(R.id.cardMale);
         cardFemale = findViewById(R.id.cardFemale);
-        npMeters = findViewById(R.id.npMeters);
-        npCentimeters = findViewById(R.id.npCentimeters);
+        npFeet = findViewById(R.id.npFeet);
+        npInches = findViewById(R.id.npInches);
         etWeight = findViewById(R.id.etWeight);
         etAge = findViewById(R.id.etAge);
         btnCalculate = findViewById(R.id.btnCalculate);
@@ -97,30 +97,30 @@ public class InputActivity extends AppCompatActivity {
     }
 
     private void setupHeightPickers() {
-        // Setup meters picker (0-2)
-        npMeters.setMinValue(0);
-        npMeters.setMaxValue(2);
-        npMeters.setValue(1);
-        npMeters.setWrapSelectorWheel(false);
+        // Setup feet picker (3-8 feet)
+        npFeet.setMinValue(3);
+        npFeet.setMaxValue(8);
+        npFeet.setValue(6);
+        npFeet.setWrapSelectorWheel(false);
 
-        // Setup centimeters picker (0-99)
-        npCentimeters.setMinValue(0);
-        npCentimeters.setMaxValue(99);
-        npCentimeters.setValue(61);
-        npCentimeters.setWrapSelectorWheel(false);
+        // Setup inches picker (0-11 inches)
+        npInches.setMinValue(0);
+        npInches.setMaxValue(11);
+        npInches.setValue(1);
+        npInches.setWrapSelectorWheel(false);
 
         // Set value change listeners
-        npMeters.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+        npFeet.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                heightMeters = newVal;
+                heightFeet = newVal;
             }
         });
 
-        npCentimeters.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+        npInches.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                heightCentimeters = newVal;
+                heightInches = newVal;
             }
         });
     }
@@ -173,9 +173,10 @@ public class InputActivity extends AppCompatActivity {
         float weight = Float.parseFloat(weightStr);
         int age = Integer.parseInt(ageStr);
 
-        // Convert height to meters
-        float heightInMeters = heightMeters + (heightCentimeters / 100.0f);
-        float heightInCm = heightMeters * 100 + heightCentimeters;
+        // Convert height from feet and inches to meters
+        float totalInches = (heightFeet * 12) + heightInches;
+        float heightInMeters = totalInches * 0.0254f; // Convert inches to meters
+        float heightInCm = totalInches * 2.54f; // Convert inches to centimeters
 
         // Calculate BMI: weight (kg) / height (m)²
         float bmi = weight / (heightInMeters * heightInMeters);
