@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">BMI Calculator Final</string>
+    
+    <!-- Start Screen -->
+    <string name="bmi_calculator_title">BMI Calculator</string>
+    <string name="bmi_calculator_subtitle">Welcome to BMI Calculator, your personal tool for tracking your Body Mass Index (BMI) and monitoring your health.</string>
+    <string name="start_button">START</string>
+    
+    <!-- Input Screen -->
+    <string name="input_screen_title">BMI Calculator</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="age">Age</string>
+    <string name="calculate_button">CALCULATE</string>
+    <string name="meter_unit">m</string>
+    <string name="centimeter_unit">cm</string>
+    <string name="kilogram_unit">kg</string>
+    
+    <!-- Result Screen -->
+    <string name="result_screen_title">Result</string>
+    <string name="bmi_unit">kg/m²</string>
+    <string name="retry_button">RETRY</string>
+    <string name="height_weight_summary">Height: %1$s cm | Weight: %2$s kg</string>
+    
+    <!-- BMI Categories -->
+    <string name="bmi_underweight_text">Underweight</string>
+    <string name="bmi_normal_text">Normal</string>
+    <string name="bmi_overweight_text">Overweight</string>
+    <string name="bmi_obese_text">Obese</string>
+    
+    <!-- BMI Advice -->
+    <string name="bmi_underweight_advice">A BMI below 18.5 is in the underweight category. Consider consulting with a healthcare provider about healthy weight gain strategies.</string>
+    <string name="bmi_normal_advice">A BMI of 18.5 - 24.9 is in the normal weight category. Keep up the good work with your healthy lifestyle!</string>
+    <string name="bmi_overweight_advice">A BMI of 25.0 - 29.9 is in the overweight category for adults of your height. Choose healthier foods and do more regular physical activities to reduce the risks.</string>
+    <string name="bmi_obese_advice">A BMI of 30.0 or higher is in the obese category. Consider consulting with a healthcare provider about weight management strategies.</string>
+</resources>
